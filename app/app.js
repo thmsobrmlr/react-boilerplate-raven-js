@@ -5,6 +5,8 @@
  * code.
  */
 
+import Raven from 'raven-js';
+
 // Needed for redux-saga es6 generator support
 import 'babel-polyfill';
 
@@ -44,6 +46,9 @@ import './global-styles';
 
 // Import routes
 import createRoutes from './routes';
+
+Raven.config('https://asd@sentry.io/asd').install();
+throw new Error('my error');
 
 // Observe loading of Open Sans (to remove open sans, remove the <link> tag in
 // the index.html file and this observer)
